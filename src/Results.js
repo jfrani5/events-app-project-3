@@ -37,13 +37,14 @@ const Results = (results) => {
 
    return (
       <main>
-         <div>
-            <img src="" alt="" />
-         </div>
-
-         <div>
-            <h3>{events[0].name}</h3>
-            <p>{events[0].pleaseNote}</p>
+         <h3>{events[0].name}</h3>
+         <div className="fullInfo">
+            <div>
+               <img src={events[0].images[0].url} alt="" />
+            </div>
+            <div>
+               <p>{events[0].pleaseNote}</p>
+            </div>
          </div>
       </main>
    )

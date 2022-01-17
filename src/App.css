@@ -8,13 +8,40 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
+/* General styles */
 html {
   font-size: 125%;
   margin: 0;
 }
 
 .wrapper {
-  width: 85%;
+  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+p {
+  margin: 0;
+}
+
+/* Header.js here */
+header {
+  background: rgb(240,255,240);
+  background: linear-gradient(170deg, rgba(240,255,240,1) 30%, rgba(255,240,240,1) 60%);
+  height: 70vh;
+}
+
+nav {
+  background: slategray;
+  padding: 0.7rem 0;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* #fff0f0 */
+
+
+/* Results.js here */
+main {
+  background: ##fbfffb;
 }

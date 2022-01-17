@@ -1,38 +1,11 @@
 
 
-
 const Header = (props) => {
 
-   // const apiKey = '97aqz9S8aFFx3efA5wKGbdqdEiEI4qtT'
-
-   // const [events, setEvents] = useState([]);
-   // const [userInput, setUserInput] = useState("");
-   // const [searchTerm, setSearchTerm] = useState("");
-
-   // useEffect(() => {
-   //    axios({
-   //       url: 'https://app.ticketmaster.com/discovery/v2/events',
-   //       method: 'GET',
-   //       dataResponse: '.json',
-   //       params: {
-   //          apikey: apiKey,
-   //          keyword: searchTerm,
-   //          countryCode: 'CA'
-   //       }
-   //    }).then((response) => {
-   //       console.log(response.data);
-   //       setEvents(response.data);
-   //    })
-   // }, []);
-
-
-
-
-
    return (
-      <header className="wrapper">
+      <header>
          <nav>
-            <p>Home or somethin about nav here</p>
+            <p>React-ive Events</p>
          </nav>
 
          <div>
