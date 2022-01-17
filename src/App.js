@@ -17,9 +17,9 @@ function App() {
 
       <Header />
 
-      <Results 
+      {/* <Results 
         
-      />
+      /> */}
      
     </div>
   );
