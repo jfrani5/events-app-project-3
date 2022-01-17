@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Fetch Test</title>
+</head>
+<body>
+   <h1>Lessssgoooo!!!</h1>
+   <script>
+
+   // const proxiedUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey=97aqz9S8aFFx3efA5wKGbdqdEiEI4qtT';
+
+   // const getKey = '97aqz9S8aFFx3efA5wKGbdqdEiEI4qtT';
+
+   // const url = new URL('http://proxy.hackeryou.com');
+   // url.search = new URLSearchParams({
+   //    reqUrl: proxiedUrl,
+   //    key: getKey
+   //    // 'params[key]': apiKey,
+   //    // 'params[param1]': value,
+   //    // 'params[param2]': value,
+   //    // proxyHeaders: '*'
+   // });
+
+   // fetch(url)
+   //    .then(response => response.json())
+   //    .then(data => {
+   //       /* ... */
+   //       console.log(data);
+   //    });
+
+
+
+   // https://app.ticketmaster.com/discovery/v2/events.json?apikey=97aqz9S8aFFx3efA5wKGbdqdEiEI4qtT
+
+
+
+
+
+
+
+fetch('https://app.ticketmaster.com/discovery/v2/events.json?apikey=97aqz9S8aFFx3efA5wKGbdqdEiEI4qtT')
+   .then((response) => {
+      return response.json();
+     
+   })
+   .then((jsonData) => {
+      console.log(jsonData);
+   }); 
+
+
+
+
+
+// getData = (userQuery) => {
+//    const url = new URL('https://api.seatgeek.com/2/events');
+//    url.search = new URLSearchParams({
+//       api_key: MjUzNTE4NTh8MTY0MjE0NDE3Mi4yMTQxMDI1,
+//       // query: userQuery
+//    })
+
+//    fetch(url)
+//       .then((response) => {
+//          // response.json()
+//          console.log(response);
+//          })
+//       .then((jsonResult) => {
+            
+//          });
+//    }
+
+
+
+// Create a namespace object
+
+// Init it
+   // call the functions that needs to be displayed when page loads
+
+// Store API key, url, image url as properties
+
+// Get API data > Fetch request
+   // set up query string parameters
+
+// Create a method to display the image and information of events to a certain city
+   // use different endpoints
+   // create image element
+   // create div for information of the event
+   // append image and div to page
+
+// Create a method to update information based on user's input
+   // reset the input field
+
+// Add and event listener to the nav to refresh the page
+
+// Stretch goal here
+
+// Call init
+
+   </script>
+</body>
+</html>
