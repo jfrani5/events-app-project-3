@@ -27,35 +27,51 @@ p {
 
 /* Header.js */
 header {
-  background: rgb(240,255,240);
-  background: linear-gradient(170deg, rgba(240,255,240,1) 30%, rgba(255,240,240,1) 60%);
-  height: 70vh;
+  background-image: url(../public/world-economic-forum.jpg);
+  /* background image is from weforum.com */
+  background-size: 61rem;
+  background-position: right;
+  height: 75vh;
 }
 
 nav {
-  background: slategray;
+  background: white;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bold;
   padding: 0.7rem 0;
-  color: white;
-  font-size: 1.5rem;
 }
 
+.welcomeContainer {
+  color: white;
+}
 
+.firstContain {
+  padding: 7rem 0 5rem 0;
+}
 
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.7rem;
+}
 
 /* Results.js */
 main {
-  background: ##fbfffb;
+  background: rgb(240,255,240);
+  background: linear-gradient(170deg, rgba(240,255,240,1) 30%, rgba(255,240,240,1) 60%);
 }
 
 h3 {
   border-bottom: 2px solid black;
-  padding-bottom: 1rem;
+  padding: 2rem 0 1rem 0;
+  margin: 0;
 }
 
 .fullInfo {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 2rem 0;
 }
 
 img {

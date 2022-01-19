@@ -30,7 +30,7 @@ function App() {
       console.log(response.data._embedded.events);
       setInfo(response.data._embedded.events);
     })
-  }, [searchItem]);
+  }, [searchItem]);   //try putting handleSubmit here
 
   const handleInput = (event) => {
     setUserInput(event.target.value);
@@ -49,12 +49,12 @@ function App() {
         </nav>
 
         <div className="welcomeContainer wrapper">
-          <div>
+          <div className="firstContain">
             <h1>Welcome to React-ive Events! </h1>
             <p>Checkout upcoming events in your city.</p>
           </div>
 
-          <div>
+          <div className="secondContain">
             <h2>Search for a city here</h2>
             <form onSubmit={handleSubmit}>
               <label htmlFor="searchHere"></label>
@@ -67,20 +67,18 @@ function App() {
 
       {info.map((information) => {
         return (
-          <main className="wrapper" key={information.id}>
+          <main key={information.id}>
+            <section className="wrapper">
+              <h3>{information.name}</h3>
+              
+              <div className="fullInfo">
+                {/* <img src={[0].images[0].url} alt="" /> */}
 
-            <h3>{information.name}</h3>
-            
-            <div className="fullInfo">
-
-              {/* <img src={[0].images[0].url} alt="" /> */}
-
-              <div className="paraInfo">
-                <p>{information.pleaseNote}</p>
+                <div className="paraInfo">
+                  <p>{information.pleaseNote}</p>
+                </div> 
               </div>
-
-            </div>
-          
+            </section>
           </main>
         )
       })}
