@@ -24,13 +24,13 @@ function App() {
       params: {
         apikey: apiKey,
         countryCode: 'CA',
-        keyword: searchItem
+        city: searchItem
       }
     }).then((response) => {
       console.log(response.data._embedded.events);
       setInfo(response.data._embedded.events);
     })
-  }, [searchItem]);   //try putting handleSubmit here
+  }, [searchItem]); 
 
   const handleInput = (event) => {
     setUserInput(event.target.value);
@@ -39,7 +39,9 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setSearchItem(userInput);
+    setUserInput("");
   }
+
 
   return (
     <div>
@@ -65,23 +67,28 @@ function App() {
         </div>
       </header>
 
-      {info.map((information) => {
-        return (
-          <main key={information.id}>
-            <section className="wrapper">
-              <h3>{information.name}</h3>
-              
-              <div className="fullInfo">
-                {/* <img src={[0].images[0].url} alt="" /> */}
 
-                <div className="paraInfo">
-                  <p>{information.pleaseNote}</p>
-                </div> 
-              </div>
-            </section>
-          </main>
-        )
-      })}
+      {
+        info.map((information) => {
+          return (
+            <main key={information.id}>
+              <section className="wrapper">
+                <h3>{information.name}</h3>
+
+                <div className="fullInfo">
+                  <img src={information.images[0].url} alt="image poster for the event" />
+
+                  <div className="paraInfo">
+                    <p><strong>Please note:</strong> {information.pleaseNote}</p>
+                    <p><strong>Date:</strong> {information.dates.start.localDate}</p>
+                    <p><strong>Time:</strong> {information.dates.start.localTime}</p>
+                  </div>
+                </div>
+              </section>
+            </main>
+          )
+        })
+      }
 
 
     </div>
@@ -90,14 +97,3 @@ function App() {
 
 export default App;
 
-
-
-      // <main className="wrapper">
-      //   <h3>{events[0].name}</h3>
-      //   <div className="fullInfo">
-      //     <img src={events[0].images[0].url} alt="" />
-      //     <div className="paraInfo">
-      //       <p>{events[0].pleaseNote}</p>
-      //     </div>
-      //   </div>
-      // </main>

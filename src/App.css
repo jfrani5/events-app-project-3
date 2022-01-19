@@ -25,6 +25,8 @@ p {
   margin: 0;
 }
 
+
+
 /* Header.js */
 header {
   background-image: url(../public/world-economic-forum.jpg);
@@ -35,7 +37,8 @@ header {
 }
 
 nav {
-  background: white;
+  background: rgb(240,255,240);
+  background: linear-gradient(170deg, rgba(240,255,240,1) 30%, rgba(255,240,240,1) 60%);
   color: black;
   font-size: 1.2rem;
   font-weight: bold;
@@ -47,7 +50,7 @@ nav {
 }
 
 .firstContain {
-  padding: 7rem 0 5rem 0;
+  padding: 7rem 0 4.5rem 0;
 }
 
 h1 {
@@ -55,10 +58,22 @@ h1 {
   margin-bottom: 0.7rem;
 }
 
+input, 
+button {
+  padding: 7px 20px;
+}
+
+button {
+  border-radius: 0;
+  background-color: salmon;
+  color: white;
+  font-weight: bold;
+ 
+}
+
 /* Results.js */
 main {
-  background: rgb(240,255,240);
-  background: linear-gradient(170deg, rgba(240,255,240,1) 30%, rgba(255,240,240,1) 60%);
+  background: honeydew;
 }
 
 h3 {
@@ -75,10 +90,38 @@ h3 {
 }
 
 img {
-  width: 20%;
+  width: 35%;
   padding-right: 2rem;
 }
 
 .paraInfo {
   width: 65%;
+  align-self: center;
+}
+
+.paraInfo p {
+  padding-bottom: 1rem;
+}
+
+
+
+/* Media Queries */
+@media (max-width: 885px) {
+  .firstContain {
+    padding: 4rem 0 3rem 0;
+  }
+
+  .fullInfo {
+    flex-direction: column;
+  }
+
+  img {
+    width: 85%;
+    padding: 0 0 2rem 0;
+    margin: 0 auto;
+  }
+
+  .paraInfo {
+    width: 100%;
+  }
 }
