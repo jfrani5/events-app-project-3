@@ -1,14 +1,17 @@
-// import Header from "./Header.js";
-// import Results from "./Results.js";
+// Components
+
+
+// Modules
+import axios from 'axios';
 import {useState, useEffect} from 'react';
 
-import axios from 'axios';
-
+// Styling
 import './App.css';
+
 
 function App() {
 
- 
+
   const apiKey = '97aqz9S8aFFx3efA5wKGbdqdEiEI4qtT'
 
   const [info, setInfo] = useState([]);
@@ -27,10 +30,15 @@ function App() {
         city: searchItem
       }
     }).then((response) => {
-      console.log(response.data._embedded.events);
-      setInfo(response.data._embedded.events);
+
+      // console.log(response.data._embedded.events);
+
+      if(userInput) {
+        setInfo(response.data._embedded.events);
+      }
+      
     })
-  }, [searchItem]); 
+  }, [searchItem]);
 
   const handleInput = (event) => {
     setUserInput(event.target.value);
@@ -46,33 +54,30 @@ function App() {
   return (
     <div>
       <header>
-        <nav>
-          <p className="wrapper">React-ive Events</p>
-        </nav>
-
         <div className="welcomeContainer wrapper">
+
           <div className="firstContain">
             <h1>Welcome to React-ive Events! </h1>
             <p>Checkout upcoming events in your city.</p>
           </div>
 
           <div className="secondContain">
-            <h2>Search for a city here</h2>
+            <h2>Search here!</h2>
             <form onSubmit={handleSubmit}>
               <label htmlFor="searchHere"></label>
-              <input type="text" id="searchHere" onChange={handleInput} value={userInput} />
+              <input type="text" id="searchHere" placeholder="Name of city..." onChange={handleInput} value={userInput} />
               <button>Submit</button>
             </form>
           </div>
+
         </div>
       </header>
 
-
-      {
-        info.map((information) => {
-          return (
-            <main key={information.id}>
-              <section className="wrapper">
+      <main>
+        {
+          info.map((information) => {
+            return (
+              <section className="wrapper" key={information.id}>
                 <h3>{information.name}</h3>
 
                 <div className="fullInfo">
@@ -85,10 +90,10 @@ function App() {
                   </div>
                 </div>
               </section>
-            </main>
-          )
-        })
-      }
+            )
+          })
+        }
+      </main>
 
 
 
@@ -102,4 +107,3 @@ function App() {
 };
 
 export default App;
-

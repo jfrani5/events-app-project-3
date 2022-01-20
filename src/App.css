@@ -36,15 +36,6 @@ header {
   height: 75vh;
 }
 
-nav {
-  background: rgb(240,255,240);
-  background: linear-gradient(170deg, rgba(240,255,240,1) 30%, rgba(255,240,240,1) 60%);
-  color: black;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 0.7rem 0;
-}
-
 .welcomeContainer {
   color: white;
 }
@@ -68,12 +59,17 @@ button {
   background-color: salmon;
   color: white;
   font-weight: bold;
- 
+}
+
+button:hover {
+  background-color: honeydew;
+  color: black;
 }
 
 /* Results.js */
 main {
-  background: honeydew;
+  background: rgb(240,255,240);
+  background: linear-gradient(170deg, rgba(240,255,240,1) 30%, rgba(255,240,240,1) 60%);
 }
 
 h3 {
@@ -103,6 +99,13 @@ img {
   padding-bottom: 1rem;
 }
 
+/* Footer */
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 0.7rem;
+}
 
 
 /* Media Queries */
