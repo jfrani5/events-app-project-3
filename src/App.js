@@ -16,10 +16,8 @@ function App() {
 
   const [info, setInfo] = useState([]);
   const [userInput, setUserInput] = useState("");
-  const [searchItem, setSearchItem] = useState("");
 
-
-  useEffect(() => {
+  const effect = () => {
     axios({
       url: 'https://app.ticketmaster.com/discovery/v2/events',
       method: 'GET',
@@ -27,18 +25,14 @@ function App() {
       params: {
         apikey: apiKey,
         countryCode: 'CA',
-        city: searchItem
+        city: userInput
       }
     }).then((response) => {
 
-      // console.log(response.data._embedded.events);
-
-      if(userInput) {
-        setInfo(response.data._embedded.events);
-      }
-      
+      console.log(response.data._embedded.events);
+      setInfo(response.data._embedded.events);
     })
-  }, [searchItem]);
+  };
 
   const handleInput = (event) => {
     setUserInput(event.target.value);
@@ -46,7 +40,7 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSearchItem(userInput);
+    effect();
     setUserInput("");
   }
 
@@ -95,7 +89,7 @@ function App() {
         }
       </main>
 
-
+      <div className="spaceBetween"></div>
 
       <footer>
         <p>Created at Juno College</p>

@@ -33,7 +33,7 @@ header {
   /* background image is from weforum.com */
   background-size: 61rem;
   background-position: right;
-  height: 75vh;
+  height: 70vh;
 }
 
 .welcomeContainer {
@@ -99,12 +99,17 @@ img {
   padding-bottom: 1rem;
 }
 
+.spaceBetween {
+  background: rgb(240,255,240);
+  background: linear-gradient(170deg, rgba(240,255,240,1) 30%, rgba(255,240,240,1) 60%);
+  height: 25vh;
+}
+
 /* Footer */
 footer {
-  background-color: black;
-  color: white;
+  color: black;
   text-align: center;
-  padding: 0.7rem;
+  padding: 0.5rem;
 }
 
 
