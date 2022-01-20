@@ -76,7 +76,7 @@ function App() {
                 <h3>{information.name}</h3>
 
                 <div className="fullInfo">
-                  <img src={information.images[0].url} alt="image poster for the event" />
+                  <img src={information.images[0].url} alt=" poster for the event" />
 
                   <div className="paraInfo">
                     <p><strong>Please note:</strong> {information.pleaseNote}</p>
@@ -89,6 +89,12 @@ function App() {
           )
         })
       }
+
+
+
+      <footer>
+        <p>Created at Juno College</p>
+      </footer>
 
 
     </div>
