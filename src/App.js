@@ -31,6 +31,8 @@ function App() {
       }
     }).then((response) => {
       setInfo(response.data._embedded.events);
+    }).catch((error) => {
+      alert(`Something went wrong. Please try again in a bit!`)
     })
   };
 
@@ -70,8 +72,10 @@ function App() {
 
       <main>
         {/* Conditional rendering */}
+
+
         { 
-          info.length === null 
+          info.length === undefined
           ? <h3>No upcoming events in your area!</h3>
           : info.map((information) => {
             return (
