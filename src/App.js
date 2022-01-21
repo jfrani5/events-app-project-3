@@ -72,8 +72,6 @@ function App() {
 
       <main>
         {/* Conditional rendering */}
-
-
         { 
           info.length === undefined
           ? <h3>No upcoming events in your area!</h3>
