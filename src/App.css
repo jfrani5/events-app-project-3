@@ -107,7 +107,7 @@ footer {
 /* Media Queries */
 @media (max-width: 885px) {
   header {
-    height: 75vh;
+    height: 80vh;
   }
   .firstContain {
     padding: 4rem 0 3rem 0;
