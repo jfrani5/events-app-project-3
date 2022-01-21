@@ -1,5 +1,6 @@
 // Components
-
+import Form from './Components/Form.js';
+import Results from './Components/Results.js';
 
 // Modules
 import axios from 'axios';
@@ -10,14 +11,15 @@ import './App.css';
 
 
 function App() {
-
-
+  // Api key
   const apiKey = '97aqz9S8aFFx3efA5wKGbdqdEiEI4qtT'
 
+  // useState
   const [info, setInfo] = useState([]);
   const [userInput, setUserInput] = useState("");
 
-  const effect = () => {
+  // Getting information from the Api
+  const callIt = () => {
     axios({
       url: 'https://app.ticketmaster.com/discovery/v2/events',
       method: 'GET',
@@ -28,22 +30,21 @@ function App() {
         city: userInput
       }
     }).then((response) => {
-
-      console.log(response.data._embedded.events);
       setInfo(response.data._embedded.events);
     })
   };
 
+  // Updates the state 
   const handleInput = (event) => {
     setUserInput(event.target.value);
   }
 
+  // Creating a function that displays data on submit
   const handleSubmit = (event) => {
     event.preventDefault();
-    effect();
+    callIt();
     setUserInput("");
   }
-
 
   return (
     <div>
@@ -53,48 +54,43 @@ function App() {
           <div className="firstContain">
             <h1>Welcome to React-ive Events! </h1>
             <p>Checkout upcoming events in your city.</p>
-          </div>
+          </div>  {/* End of div firstContain */}
 
           <div className="secondContain">
             <h2>Search here!</h2>
-            <form onSubmit={handleSubmit}>
-              <label htmlFor="searchHere"></label>
-              <input type="text" id="searchHere" placeholder="Name of city..." onChange={handleInput} value={userInput} />
-              <button>Submit</button>
-            </form>
-          </div>
+            <Form
+              handleSubmit={handleSubmit}
+              handleInput={handleInput}
+              userInput={userInput}
+            />
+          </div>  {/* End of div secondContain */}
 
-        </div>
+        </div>  {/* End of div welcomeContainer */}
       </header>
 
       <main>
-        {
-          info.map((information) => {
+        {/* Conditional rendering */}
+        { 
+          info.length === null 
+          ? <h3>No upcoming events in your area!</h3>
+          : info.map((information) => {
             return (
-              <section className="wrapper" key={information.id}>
-                <h3>{information.name}</h3>
-
-                <div className="fullInfo">
-                  <img src={information.images[0].url} alt=" poster for the event" />
-
-                  <div className="paraInfo">
-                    <p><strong>Please note:</strong> {information.pleaseNote}</p>
-                    <p><strong>Date:</strong> {information.dates.start.localDate}</p>
-                    <p><strong>Time:</strong> {information.dates.start.localTime}</p>
-                  </div>
-                </div>
-              </section>
+              <Results
+                name={information.name}
+                id={information.id}
+                images={information['images'][0]['url']}
+                pleaseNote={information.pleaseNote}
+                localDate={information.dates.start.localDate}
+                localTime={information.dates.start.localTime}
+              />
             )
           })
         }
       </main>
 
-      <div className="spaceBetween"></div>
-
       <footer>
         <p>Created at Juno College</p>
       </footer>
-
 
     </div>
   )
